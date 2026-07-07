@@ -1,0 +1,69 @@
+# Robot Framework Labs
+
+Proyecto de automatización con Robot Framework que integra pruebas de API, pruebas UI y ejecución continua con GitHub Actions.
+
+## Requisitos
+
+- Python 3.11 o superior
+- pip
+- Google Chrome
+- Entorno virtual recomendado
+
+## Instalación
+
+1. Clonar el repositorio.
+2. Crear y activar el entorno virtual.
+3. Instalar dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Ejecución local
+
+### Pruebas API
+
+```bash
+robot api/06_api_tests.robot
+```
+
+### Pruebas UI
+
+```bash
+robot ui/04_login.robot
+```
+
+### Suite de regresión completa
+
+```bash
+robot 07_regresion_completa.robot
+```
+
+## Estructura del proyecto
+
+```text
+lab7partelll/
+├── .github/
+│   └── workflows/
+│       └── robot-tests.yml
+├── api/
+│   └── 06_api_tests.robot
+├── ui/
+│   ├── 04_login.robot
+│   └── login_page.resource
+├── 07_regresion_completa.robot
+├── requirements.txt
+└── README.md
+```
+
+## Integración continua
+
+El pipeline de GitHub Actions:
+- instala dependencias,
+- ejecuta las pruebas de API,
+- ejecuta la suite de regresión completa,
+- publica resultados como artefacto.
+
+## Tags
+
+La suite de regresión completa usa el tag `regresion`.
