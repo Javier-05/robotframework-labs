@@ -2,7 +2,7 @@
 Library    RequestsLibrary
 Library    Collections
 Library    SeleniumLibrary
-Resource   login_page.resource
+Resource   ui/login_page.resource
 
 Suite Setup       Configuracion Inicial Regresion
 Suite Teardown    Cierre Inicial Regresion
