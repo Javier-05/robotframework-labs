@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 7.4.2 (Python 3.14.4 on win32)" generated="2026-07-06T00:41:43.130387" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="Api" source="C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\api">
+<suite id="s1-s1-s1" name="06 Api Tests" source="C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\api\06_api_tests.robot">
+<test id="s1-s1-s1-t1" name="Obtener Lista De Usuarios" line="10">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-07-06T00:40:46.389461" level="INFO">${headers} = {'x-api-key': 'free_user_3G7IJw3QWWyO5fG9UVi2DtxKWGI', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>x-api-key=${API_KEY}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-07-06T00:40:46.388603" elapsed="0.000915"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-07-06T00:40:46.390143" level="INFO">Creating Session using : alias=reqres, url=https://reqres.in, headers={'x-api-key': 'free_user_3G7IJw3QWWyO5fG9UVi2DtxKWGI', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>reqres</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-07-06T00:40:46.389732" elapsed="0.000679"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-07-06T00:40:46.900049" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-api-key': 'free_user_3G7IJw3QWWyO5fG9UVi2DtxKWGI', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2026-07-06T00:40:46.900195" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 06 Jul 2026 05:40:46 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=14400, s-maxage=60', 'Cdn-Cache-Control': 'max-age=60', 'Cross-Origin-Opener-Policy': 'same-origin', 'Cross-Origin-Resource-Policy': 'same-origin', 'Etag': 'W/"5f6-+6NJQG10Gk4CkQ8jUhrGczGADWk"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Origin-Agent-Cluster': '?1', 'Ratelimit-Limit': '20', 'Ratelimit-Policy': '20;w=60', 'Ratelimit-Remaining': '19', 'Ratelimit-Reset': '60', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=huTMpws2FEEp3diDWam0BvcrvKqjyRCNT6K1TlUasps%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1783315874"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=huTMpws2FEEp3diDWam0BvcrvKqjyRCNT6K1TlUasps%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1783315874"', 'Server': 'cloudflare', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Dns-Prefetch-Control': 'off', 'X-Download-Options': 'noopen', 'X-Frame-Options': 'DENY', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Powered-By': 'ReqRes.in - Deploy backends in 30 seconds', 'X-Ratelimit-Limit': '250', 'X-Ratelimit-Remaining': '248', 'X-Ratelimit-Reset': '1783382400', 'X-Reqres-Docs': 'https://reqres.in', 'X-Reqres-Message': 'This API is powered by ReqRes. Deploy your own backend in 30 seconds!', 'X-Reqres-Templates': 'https://app.reqres.in/templates', 'X-Reqres-Tip': 'Create your own backend with persistent data - app.reqres.in/dashboard', 'X-Reqres-Trial': 'true', 'X-Reqres-Trial-Days-Remaining': '14', 'X-Reqres-Trial-Expires': '2026-07-20T04:00:59.949Z', 'X-Reqres-Upgrade': 'https://app.reqres.in/upgrade', 'X-Request-Id': '01e1571b-bf09-385a-4b81-dbcad20fdca5', 'X-Robots-Tag': 'noindex, nofollow', 'X-Xss-Protection': '0', 'Cf-Cache-Status': 'REVALIDATED', 'Content-Encoding': 'gzip', 'CF-RAY': 'a16c46cf4e82da53-MIA'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://benhowdle.im/first-cto-playbook?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Become a better CTO. A playbook of painful stories and practical advice from a two-time startup CTO."},"_meta":{"powered_by":"ReqRes","docs_url":"https://app.reqres.in/documentation","upgrade_url":"https://app.reqres.in/upgrade","example_url":"https://app.reqres.in/examples/notes-app","variant":"v1_b","message":"This is a read-only demo endpoint. Sign up to create your own collections with full CRUD and auth.","cta":{"label":"Get started","url":"https://app.reqres.in/upgrade"},"context":"legacy_success"}} 
+ </msg>
+<msg time="2026-07-06T00:40:46.900273" level="INFO">C:\Users\ADMIN\Downloads\robotframework-labs\venv\Lib\site-packages\urllib3\connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-07-06T00:40:46.900431" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>reqres</arg>
+<arg>url=/api/users</arg>
+<arg>params=page=2</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-07-06T00:40:46.390559" elapsed="0.509897"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-07-06T00:40:46.900579" elapsed="0.000219"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-07-06T00:40:46.901469" level="INFO">${body} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
+<var>${body}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-07-06T00:40:46.900886" elapsed="0.000607"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${body}[total] &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-07-06T00:40:46.901577" elapsed="0.000296"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:46.387482" elapsed="0.514488"/>
+</test>
+<test id="s1-s1-s1-t2" name="Crear Nuevo Usuario" line="18">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-07-06T00:40:46.902841" level="INFO">${headers} = {'x-api-key': 'free_user_3G7IJw3QWWyO5fG9UVi2DtxKWGI', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>x-api-key=${API_KEY}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-07-06T00:40:46.902537" elapsed="0.000326"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-07-06T00:40:46.903108" level="INFO">Creating Session using : alias=reqres, url=https://reqres.in, headers={'x-api-key': 'free_user_3G7IJw3QWWyO5fG9UVi2DtxKWGI', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>reqres</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-07-06T00:40:46.902947" elapsed="0.000271"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-07-06T00:40:46.903494" level="INFO">&amp;{payload} = { name=Carlos | job=QA Engineer }</msg>
+<var>&amp;{payload}</var>
+<arg>name=Carlos</arg>
+<arg>job=QA Engineer</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-07-06T00:40:46.903293" elapsed="0.000218"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-07-06T00:40:47.478215" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-api-key': 'free_user_3G7IJw3QWWyO5fG9UVi2DtxKWGI', 'Content-Type': 'application/json', 'Content-Length': '40'} 
+ body=b'{"name": "Carlos", "job": "QA Engineer"}' 
+ </msg>
+<msg time="2026-07-06T00:40:47.478317" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Mon, 06 Jul 2026 05:40:47 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '494', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store', 'Cross-Origin-Opener-Policy': 'same-origin', 'Cross-Origin-Resource-Policy': 'same-origin', 'Etag': 'W/"1ee-EAQjoZpbzJzgsn0J+Zx94rKY68s"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Origin-Agent-Cluster': '?1', 'Ratelimit-Limit': '20', 'Ratelimit-Policy': '20;w=60', 'Ratelimit-Remaining': '19', 'Ratelimit-Reset': '60', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=ycsmqy%2BZe24vQkFEhisfJfbWWkMtxNmIsyU4RyyleQk%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1783316447"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=ycsmqy%2BZe24vQkFEhisfJfbWWkMtxNmIsyU4RyyleQk%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1783316447"', 'Server': 'cloudflare', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Dns-Prefetch-Control': 'off', 'X-Download-Options': 'noopen', 'X-Frame-Options': 'DENY', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Powered-By': 'ReqRes.in - Deploy backends in 30 seconds', 'X-Ratelimit-Limit': '250', 'X-Ratelimit-Remaining': '245', 'X-Ratelimit-Reset': '1783382400', 'X-Reqres-Docs': 'https://reqres.in', 'X-Reqres-Message': 'This API is powered by ReqRes. Deploy your own backend in 30 seconds!', 'X-Reqres-Templates': 'https://app.reqres.in/templates', 'X-Reqres-Tip': 'Need more than /api/users? Build custom collections - app.reqres.in/dashboard', 'X-Reqres-Trial': 'true', 'X-Reqres-Trial-Days-Remaining': '14', 'X-Reqres-Trial-Expires': '2026-07-20T05:35:12.728Z', 'X-Reqres-Upgrade': 'https://app.reqres.in/upgrade', 'X-Request-Id': '4f33fe28-507c-f5a3-6112-738be5cf6790', 'X-Robots-Tag': 'noindex, nofollow', 'X-Xss-Protection': '0', 'Cf-Cache-Status': 'DYNAMIC', 'CF-RAY': 'a16c46d24a38721f-MIA'} 
+ body={"name":"Carlos","job":"QA Engineer","id":"710","createdAt":"2026-07-06T05:40:47.240Z","_meta":{"powered_by":"ReqRes","docs_url":"https://app.reqres.in/documentation","upgrade_url":"https://app.reqres.in/upgrade","example_url":"https://app.reqres.in/examples/notes-app","variant":"v1_b","message":"This is a read-only demo endpoint. Sign up to create your own collections with full CRUD and auth.","cta":{"label":"Get started","url":"https://app.reqres.in/upgrade"},"context":"legacy_success"}} 
+ </msg>
+<msg time="2026-07-06T00:40:47.478386" level="INFO">C:\Users\ADMIN\Downloads\robotframework-labs\venv\Lib\site-packages\urllib3\connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-07-06T00:40:47.478555" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>reqres</arg>
+<arg>/api/users</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-07-06T00:40:46.903577" elapsed="0.575015"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-07-06T00:40:47.478743" elapsed="0.000185"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-07-06T00:40:47.479644" level="INFO">${body} = {'name': 'Carlos', 'job': 'QA Engineer', 'id': '710', 'createdAt': '2026-07-06T05:40:47.240Z', '_meta': {'powered_by': 'ReqRes', 'docs_url': 'https://app.reqres.in/documentation', 'upgrade_url': 'http...</msg>
+<var>${body}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-07-06T00:40:47.479013" elapsed="0.000657"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${body}[name]</arg>
+<arg>Carlos</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-07-06T00:40:47.479762" elapsed="0.000222"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:46.902197" elapsed="0.577896"/>
+</test>
+<test id="s1-s1-s1-t3" name="Obtener Usuario Inexistente" line="27">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-07-06T00:40:47.481490" level="INFO">${headers} = {'x-api-key': 'free_user_3G7IJw3QWWyO5fG9UVi2DtxKWGI', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>x-api-key=${API_KEY}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-07-06T00:40:47.481199" elapsed="0.000320"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-07-06T00:40:47.481809" level="INFO">Creating Session using : alias=reqres, url=https://reqres.in, headers={'x-api-key': 'free_user_3G7IJw3QWWyO5fG9UVi2DtxKWGI', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>reqres</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-07-06T00:40:47.481622" elapsed="0.000295"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-07-06T00:40:48.012077" level="INFO">GET Request : url=https://reqres.in/api/unknown/999 
+ path_url=/api/unknown/999 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-api-key': 'free_user_3G7IJw3QWWyO5fG9UVi2DtxKWGI', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2026-07-06T00:40:48.012254" level="INFO">GET Response : url=https://reqres.in/api/unknown/999 
+ status=404, reason=Not Found 
+ headers={'Date': 'Mon, 06 Jul 2026 05:40:47 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store', 'Cross-Origin-Opener-Policy': 'same-origin', 'Cross-Origin-Resource-Policy': 'same-origin', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Origin-Agent-Cluster': '?1', 'Ratelimit-Limit': '100', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Remaining': '99', 'Ratelimit-Reset': '60', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=ycsmqy%2BZe24vQkFEhisfJfbWWkMtxNmIsyU4RyyleQk%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1783316447"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=ycsmqy%2BZe24vQkFEhisfJfbWWkMtxNmIsyU4RyyleQk%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1783316447"', 'Server': 'cloudflare', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Dns-Prefetch-Control': 'off', 'X-Download-Options': 'noopen', 'X-Frame-Options': 'DENY', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Powered-By': 'ReqRes.in - Deploy backends in 30 seconds', 'X-Ratelimit-Limit': '250', 'X-Ratelimit-Remaining': '244', 'X-Ratelimit-Reset': '1783382400', 'X-Reqres-Docs': 'https://reqres.in', 'X-Reqres-Message': 'This API is powered by ReqRes. Deploy your own backend in 30 seconds!', 'X-Reqres-Templates': 'https://app.reqres.in/templates', 'X-Reqres-Tip': 'Add real user auth to your app with magic codes - reqres.in/docs', 'X-Reqres-Trial': 'true', 'X-Reqres-Trial-Days-Remaining': '14', 'X-Reqres-Trial-Expires': '2026-07-20T05:35:12.728Z', 'X-Reqres-Upgrade': 'https://app.reqres.in/upgrade', 'X-Request-Id': 'bbdbeb3c-e2fb-d422-8735-871f036eebbb', 'X-Robots-Tag': 'noindex, nofollow', 'X-Xss-Protection': '0', 'Cf-Cache-Status': 'BYPASS', 'CF-RAY': 'a16c46d60884b112-MIA'} 
+ body={} 
+ </msg>
+<msg time="2026-07-06T00:40:48.012402" level="INFO">C:\Users\ADMIN\Downloads\robotframework-labs\venv\Lib\site-packages\urllib3\connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-07-06T00:40:48.012668" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<var>${response}</var>
+<arg>reqres</arg>
+<arg>/api/unknown/999</arg>
+<arg>expected_status=404</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-07-06T00:40:47.482016" elapsed="0.530718"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>404</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-07-06T00:40:48.012981" elapsed="0.000297"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:47.480807" elapsed="0.532615"/>
+</test>
+<status status="PASS" start="2026-07-06T00:40:46.269000" elapsed="1.625000"/>
+</suite>
+<status status="PASS" start="2026-07-06T00:40:46.268000" elapsed="1.625000"/>
+</suite>
+<suite id="s1-s2" name="Ui" source="C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\ui">
+<suite id="s1-s2-s1" name="04 Login" source="C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\ui\04_login.robot">
+<test id="s1-s2-s1-t1" name="Login Exitoso Con Usuario Valido" line="9">
+<kw name="Abrir Sitio Swag Labs">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:46.547202" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:40:46.546912" elapsed="2.771803"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.319062" elapsed="0.038873"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:46.546269" elapsed="2.811885"/>
+</kw>
+<kw name="Iniciar Sesion">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:49.359649" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.359034" elapsed="0.351843"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:49.711920" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:40:49.767058" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.711147" elapsed="0.119437"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:49.831518" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.831078" elapsed="0.139605"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-07-06T00:40:49.358564" elapsed="0.612404"/>
+</kw>
+<kw name="Verificar Login Exitoso">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Products</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.971982" elapsed="0.015291"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:49.971324" elapsed="0.016211"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:46.545629" elapsed="3.442245"/>
+</test>
+<test id="s1-s2-s1-t2" name="Login Fallido Con Usuario Bloqueado" line="14">
+<kw name="Abrir Sitio Swag Labs">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:49.991112" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.990450" elapsed="1.597084"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.587899" elapsed="0.038509"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:49.989862" elapsed="1.636742"/>
+</kw>
+<kw name="Iniciar Sesion">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.628540" level="INFO">Typing text 'locked_out_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.627854" elapsed="0.173112"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.801902" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:40:51.849911" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.801353" elapsed="0.117660"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.919924" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.919441" elapsed="0.080888"/>
+</kw>
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-07-06T00:40:51.626939" elapsed="0.373717"/>
+</kw>
+<kw name="Verificar Mensaje De Error">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:40:52.002043" elapsed="0.019574"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:52.001140" elapsed="0.021011"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:49.988767" elapsed="2.033981"/>
+</test>
+<status status="PASS" start="2026-07-06T00:40:46.279163" elapsed="5.745177"/>
+</suite>
+<suite id="s1-s2-s2" name="05 Login Ddt" source="C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\ui\05_login_ddt.robot">
+<kw name="Abrir Navegador" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-07-06T00:40:49.054104" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E86020F4D0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.052157" elapsed="0.001996"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>detach</arg>
+<arg>${True}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.054356" elapsed="0.000388"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:49.055083" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>https://www.saucedemo.com</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.054884" elapsed="1.559183"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.615303" elapsed="0.045060"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:49.051611" elapsed="1.609003"/>
+</kw>
+<test id="s1-s2-s2-t1" name="Usuario estandar" line="10">
+<kw name="Validar Intento De Login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:50.662317" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>https://www.saucedemo.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.662125" elapsed="0.081028"/>
+</kw>
+<kw name="Ingresar Credenciales" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.744061" elapsed="0.031590"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.775838" elapsed="0.063990"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.840093" elapsed="0.044731"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:50.885380" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${INPUT_USER}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.885048" elapsed="0.130577"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.016545" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:40:51.051427" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.015967" elapsed="0.105374"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.121990" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.121634" elapsed="0.146966"/>
+</kw>
+<arg>${usuario}</arg>
+<arg>${clave}</arg>
+<status status="PASS" start="2026-07-06T00:40:50.743524" elapsed="0.525262"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Products</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.269786" elapsed="0.013810"/>
+</kw>
+<arg>'${resultado}' == 'exito'</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>Products</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.269016" elapsed="0.014735"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<arg>exito</arg>
+<status status="PASS" start="2026-07-06T00:40:50.661621" elapsed="0.622291"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:50.660793" elapsed="0.623289"/>
+</test>
+<test id="s1-s2-s2-t2" name="Usuario bloqueado" line="11">
+<kw name="Validar Intento De Login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.285084" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>https://www.saucedemo.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.284988" elapsed="0.031961"/>
+</kw>
+<kw name="Ingresar Credenciales" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.317854" elapsed="0.045382"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.363569" elapsed="0.045620"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.409465" elapsed="0.041080"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.452211" level="INFO">Typing text 'locked_out_user' into text field 'id:user-name'.</msg>
+<arg>${INPUT_USER}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.451009" elapsed="0.104627"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.556789" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:40:51.605868" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.556040" elapsed="0.147284"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.704491" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.703887" elapsed="0.167161"/>
+</kw>
+<arg>${usuario}</arg>
+<arg>${clave}</arg>
+<status status="PASS" start="2026-07-06T00:40:51.317329" elapsed="0.553893"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:07.035789" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="20260706_004045-2-selenium-screenshot-1.png"&gt;&lt;img src="20260706_004045-2-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-07-06T00:41:07.036031" level="FAIL">Element 'css:h3[data-test='error']' not visible after 15 seconds.</msg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-07-06T00:40:51.872406" elapsed="15.165553">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>'${resultado}' == 'exito'</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>Products</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-07-06T00:40:51.871494" elapsed="15.166573">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<arg>error</arg>
+<status status="FAIL" start="2026-07-06T00:40:51.284728" elapsed="15.753495">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-07-06T00:40:51.284379" elapsed="15.754123">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</test>
+<test id="s1-s2-s2-t3" name="Clave incorrecta" line="12">
+<kw name="Validar Intento De Login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:07.039478" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>https://www.saucedemo.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.039373" elapsed="0.056834"/>
+</kw>
+<kw name="Ingresar Credenciales" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.096830" elapsed="0.014825"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.112198" elapsed="0.024389"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.136750" elapsed="0.026703"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:07.164296" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${INPUT_USER}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.163752" elapsed="0.108488"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:07.273018" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:41:07.337436" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.272544" elapsed="0.170558"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:07.444219" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.443511" elapsed="0.138272"/>
+</kw>
+<arg>${usuario}</arg>
+<arg>${clave}</arg>
+<status status="PASS" start="2026-07-06T00:41:07.096462" elapsed="0.485697"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:22.724146" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="20260706_004045-2-selenium-screenshot-2.png"&gt;&lt;img src="20260706_004045-2-selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-07-06T00:41:22.724508" level="FAIL">Element 'css:h3[data-test='error']' not visible after 15 seconds.</msg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-07-06T00:41:07.584279" elapsed="15.143314">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>'${resultado}' == 'exito'</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>Products</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-07-06T00:41:07.582507" elapsed="15.145328">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>standard_user</arg>
+<arg>clave_invalida</arg>
+<arg>error</arg>
+<status status="FAIL" start="2026-07-06T00:41:07.039116" elapsed="15.689163">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-07-06T00:41:07.038760" elapsed="15.689955">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</test>
+<test id="s1-s2-s2-t4" name="Usuario vacio" line="13">
+<kw name="Validar Intento De Login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:22.732415" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>https://www.saucedemo.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:41:22.732240" elapsed="0.106252"/>
+</kw>
+<kw name="Ingresar Credenciales" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:41:22.840909" elapsed="0.033767"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:22.875433" elapsed="0.076472"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:22.952319" elapsed="0.058799"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:23.012333" level="INFO">Typing text '' into text field 'id:user-name'.</msg>
+<arg>${INPUT_USER}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:23.011556" elapsed="0.120328"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:23.133058" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:41:23.190515" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:23.132317" elapsed="0.136065"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:23.269228" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:23.268732" elapsed="0.121454"/>
+</kw>
+<arg>${usuario}</arg>
+<arg>${clave}</arg>
+<status status="PASS" start="2026-07-06T00:41:22.839367" elapsed="0.551070"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:38.501941" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="20260706_004045-2-selenium-screenshot-3.png"&gt;&lt;img src="20260706_004045-2-selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-07-06T00:41:38.502421" level="FAIL">Element 'css:h3[data-test='error']' not visible after 15 seconds.</msg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-07-06T00:41:23.392439" elapsed="15.112830">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>'${resultado}' == 'exito'</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>Products</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-07-06T00:41:23.391087" elapsed="15.114482">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>secret_sauce</arg>
+<arg>error</arg>
+<status status="FAIL" start="2026-07-06T00:41:22.730713" elapsed="15.775222">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-07-06T00:41:22.729550" elapsed="15.777009">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</test>
+<test id="s1-s2-s2-t5" name="Agregar Producto Al Carrito" line="15">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:38.508715" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>https://www.saucedemo.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.508420" elapsed="0.087859"/>
+</kw>
+<kw name="Login Exitoso" owner="login_page">
+<kw name="Ingresar Credenciales" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.598579" elapsed="0.032799"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.631816" elapsed="0.067277"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.699572" elapsed="0.057325"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:38.758134" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${INPUT_USER}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.757192" elapsed="0.148200"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:38.906908" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:41:38.965288" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.905861" elapsed="0.148247"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:39.055358" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:39.054548" elapsed="0.136535"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-07-06T00:41:38.597646" elapsed="0.593735"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:40.475070" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff608907726]
+	chromedriver!(No symbol) [0x7ff608953083]
+	chromedriver!(No symbol) [0x7ff60898a2d2]
+	chromedriver!(No symbol) [0x7ff6089840d2]
+	chromedriver!(No symbol) [0x7ff608983892]
+	chromedriver!(No symbol) [0x7ff6088d03e5]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!(No symbol) [0x7ff6088cf188]
+	chromedriver!GetHandleVerifier [0x7ff609577b58+7c84d8]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</msg>
+<msg time="2026-07-06T00:41:40.475576" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff60890793d]
+	chromedriver!(No symbol) [0x7ff6088f2d82]
+	chromedriver!(No symbol) [0x7ff6089190cc]
+	chromedriver!(No symbol) [0x7ff608991aa0]
+	chromedriver!(No symbol) [0x7ff6089aec82]
+	chromedriver!(No symbol) [0x7ff60895401c]
+	chromedriver!(No symbol) [0x7ff608954f43]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</msg>
+<arg>Products</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-07-06T00:41:39.191750" elapsed="1.291862">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff60890793d]
+	chromedriver!(No symbol) [0x7ff6088f2d82]
+	chromedriver!(No symbol) [0x7ff6089190cc]
+	chromedriver!(No symbol) [0x7ff608991aa0]
+	chromedriver!(No symbol) [0x7ff6089aec82]
+	chromedriver!(No symbol) [0x7ff60895401c]
+	chromedriver!(No symbol) [0x7ff608954f43]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</status>
+</kw>
+<status status="FAIL" start="2026-07-06T00:41:38.596755" elapsed="1.887158">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff60890793d]
+	chromedriver!(No symbol) [0x7ff6088f2d82]
+	chromedriver!(No symbol) [0x7ff6089190cc]
+	chromedriver!(No symbol) [0x7ff608991aa0]
+	chromedriver!(No symbol) [0x7ff6089aec82]
+	chromedriver!(No symbol) [0x7ff60895401c]
+	chromedriver!(No symbol) [0x7ff608954f43]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</status>
+</kw>
+<kw name="Agregar Backpack Al Carrito" owner="login_page">
+<status status="NOT RUN" start="2026-07-06T00:41:40.484281" elapsed="0.000053"/>
+</kw>
+<kw name="Verificar Carrito Con Un Producto" owner="login_page">
+<status status="NOT RUN" start="2026-07-06T00:41:40.484457" elapsed="0.000033"/>
+</kw>
+<kw name="Pause Execution" owner="Dialogs">
+<arg>Toma la captura del carrito con 1 producto y luego presiona OK.</arg>
+<doc>Pauses execution until user clicks ``Ok`` button.</doc>
+<status status="NOT RUN" start="2026-07-06T00:41:40.484621" elapsed="0.000044"/>
+</kw>
+<status status="FAIL" start="2026-07-06T00:41:38.507510" elapsed="1.977477">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff60890793d]
+	chromedriver!(No symbol) [0x7ff6088f2d82]
+	chromedriver!(No symbol) [0x7ff6089190cc]
+	chromedriver!(No symbol) [0x7ff608991aa0]
+	chromedriver!(No symbol) [0x7ff6089aec82]
+	chromedriver!(No symbol) [0x7ff60895401c]
+	chromedriver!(No symbol) [0x7ff608954f43]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-07-06T00:41:40.485913" elapsed="2.162521"/>
+</kw>
+<status status="FAIL" start="2026-07-06T00:40:48.724065" elapsed="53.924606"/>
+</suite>
+<status status="FAIL" start="2026-07-06T00:40:46.277000" elapsed="59.670000"/>
+</suite>
+<status status="FAIL" start="2026-07-06T00:40:46.233000" elapsed="56.419000"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Suites" id="s1" pass="6" fail="4" skip="0">Suites</stat>
+<stat name="Api" id="s1-s1" pass="3" fail="0" skip="0">Suites.Api</stat>
+<stat name="06 Api Tests" id="s1-s1-s1" pass="3" fail="0" skip="0">Suites.Api.06 Api Tests</stat>
+<stat name="Ui" id="s1-s2" pass="3" fail="4" skip="0">Suites.Ui</stat>
+<stat name="04 Login" id="s1-s2-s1" pass="2" fail="0" skip="0">Suites.Ui.04 Login</stat>
+<stat name="05 Login Ddt" id="s1-s2-s2" pass="1" fail="4" skip="0">Suites.Ui.05 Login Ddt</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-07-06T00:41:40.475070" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff608907726]
+	chromedriver!(No symbol) [0x7ff608953083]
+	chromedriver!(No symbol) [0x7ff60898a2d2]
+	chromedriver!(No symbol) [0x7ff6089840d2]
+	chromedriver!(No symbol) [0x7ff608983892]
+	chromedriver!(No symbol) [0x7ff6088d03e5]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!(No symbol) [0x7ff6088cf188]
+	chromedriver!GetHandleVerifier [0x7ff609577b58+7c84d8]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</msg>
+</errors>
+</robot>

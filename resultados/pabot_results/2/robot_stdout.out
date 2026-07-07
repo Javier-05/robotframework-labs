@@ -1,0 +1,53 @@
+==============================================================================
+Suites
+==============================================================================
+Suites.Ui
+==============================================================================
+Suites.Ui.05 Login Ddt
+==============================================================================
+Usuario estandar                                                      | PASS |
+------------------------------------------------------------------------------
+Usuario bloqueado                                                     | FAIL |
+Element 'css:h3[data-test='error']' not visible after 15 seconds.
+------------------------------------------------------------------------------
+Clave incorrecta                                                      | FAIL |
+Element 'css:h3[data-test='error']' not visible after 15 seconds.
+------------------------------------------------------------------------------
+Usuario vacio                                                         | FAIL |
+Element 'css:h3[data-test='error']' not visible after 15 seconds.
+------------------------------------------------------------------------------
+Agregar Producto Al Carrito                                           | FAIL |
+InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff60890793d]
+	chromedriver!(No symbol) [0x7ff6088f2d82]
+	chromedriver!(No symbol) [0x7ff6089190cc]
+	chromedriver!(No symbol) [0x7ff608991aa0]
+	chromedriver!(No symbol) [0x7ff6089aec82]
+	chromedriver!(No symbol) [0x7ff60895401c]
+	chromedriver!(No symbol) [0x7ff608954f43]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+------------------------------------------------------------------------------
+Suites.Ui.05 Login Ddt                                                | FAIL |
+5 tests, 1 passed, 4 failed
+==============================================================================
+Suites.Ui                                                             | FAIL |
+5 tests, 1 passed, 4 failed
+==============================================================================
+Suites                                                                | FAIL |
+5 tests, 1 passed, 4 failed
+==============================================================================
+Output:  C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\resultados\pabot_results\2\output.xml

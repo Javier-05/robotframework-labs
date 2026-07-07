@@ -1,0 +1,99 @@
+[INFO]    Initialized logging in resultados\pabot_results
+[INFO]    Robot Framework remote server at 127.0.0.1:8270 started.
+[DEBUG]   Storing .pabotsuitenames file
+[DEBUG]   2026-07-06 00:40:45.930056 [PID:19572] [1] [ID:1] EXECUTING Suites.Ui.04 Login
+[DEBUG]   2026-07-06 00:40:45.931294 [PID:2940] [0] [ID:0] EXECUTING Suites.Api.06 Api Tests
+[INFO]    2026-07-06 00:40:48.354413 [PID:2940] [0] [ID:0] PASSED Suites.Api.06 Api Tests in 2.4 seconds
+[DEBUG]   2026-07-06 00:40:48.369448 [PID:3332] [0] [ID:2] EXECUTING Suites.Ui.05 Login Ddt
+[DEBUG]   2026-07-06 00:40:50.995159 [PID:19572] [1] [ID:1] still running Suites.Ui.04 Login after 5.0s
+[DEBUG]   2026-07-06 00:40:53.396670 [PID:3332] [0] [ID:2] still running Suites.Ui.05 Login Ddt after 5.0s
+[INFO]    2026-07-06 00:40:56.655538 [PID:19572] [1] [ID:1] PASSED Suites.Ui.04 Login in 10.7 seconds
+[DEBUG]   2026-07-06 00:41:03.441174 [PID:3332] [0] [ID:2] still running Suites.Ui.05 Login Ddt after 15.0s
+[DEBUG]   2026-07-06 00:41:18.516310 [PID:3332] [0] [ID:2] still running Suites.Ui.05 Login Ddt after 30.0s
+[DEBUG]   2026-07-06 00:41:38.604879 [PID:3332] [0] [ID:2] still running Suites.Ui.05 Login Ddt after 50.0s
+[INFO]    2026-07-06 00:41:43.043232 [PID:3332] [0] [ID:2] Execution failed in Suites.Ui.05 Login Ddt with 4 failing test(s)
+==============================================================================
+Suites
+==============================================================================
+Suites.Ui
+==============================================================================
+Suites.Ui.05 Login Ddt
+==============================================================================
+Usuario estandar                                                      | PASS |
+------------------------------------------------------------------------------
+Usuario bloqueado                                                     | FAIL |
+Element 'css:h3[data-test='error']' not visible after 15 seconds.
+------------------------------------------------------------------------------
+Clave incorrecta                                                      | FAIL |
+Element 'css:h3[data-test='error']' not visible after 15 seconds.
+------------------------------------------------------------------------------
+Usuario vacio                                                         | FAIL |
+Element 'css:h3[data-test='error']' not visible after 15 seconds.
+------------------------------------------------------------------------------
+Agregar Producto Al Carrito                                           | FAIL |
+InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff60890793d]
+	chromedriver!(No symbol) [0x7ff6088f2d82]
+	chromedriver!(No symbol) [0x7ff6089190cc]
+	chromedriver!(No symbol) [0x7ff608991aa0]
+	chromedriver!(No symbol) [0x7ff6089aec82]
+	chromedriver!(No symbol) [0x7ff60895401c]
+	chromedriver!(No symbol) [0x7ff608954f43]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+------------------------------------------------------------------------------
+Suites.Ui.05 Login Ddt                                                | FAIL |
+5 tests, 1 passed, 4 failed
+==============================================================================
+Suites.Ui                                                             | FAIL |
+5 tests, 1 passed, 4 failed
+==============================================================================
+Suites                                                                | FAIL |
+5 tests, 1 passed, 4 failed
+==============================================================================
+Output:  C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\resultados\pabot_results\2\output.xml
+
+[ WARN ] Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff608907726]
+	chromedriver!(No symbol) [0x7ff608953083]
+	chromedriver!(No symbol) [0x7ff60898a2d2]
+	chromedriver!(No symbol) [0x7ff6089840d2]
+	chromedriver!(No symbol) [0x7ff608983892]
+	chromedriver!(No symbol) [0x7ff6088d03e5]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!(No symbol) [0x7ff6088cf188]
+	chromedriver!GetHandleVerifier [0x7ff609577b58+7c84d8]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+[INFO]    10 tests, 6 passed, 4 failed, 0 skipped.
+[INFO]    ===================================================
+[INFO]    Output:  C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\resultados\output.xml
+[INFO]    Log:     C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\resultados\log.html
+[INFO]    Report:  C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\resultados\report.html
+[DEBUG]   Finalizing Pabot execution...
+[DEBUG]   Stopping PabotLib process
+[INFO]    Robot Framework remote server at 127.0.0.1:8270 stopped.
+[DEBUG]   PabotLib process stopped
+[INFO]    Total testing: 1 minute 7.80 seconds
+[INFO]    Elapsed time:  58.18 seconds
+[DEBUG]   Logs flushed successfully.

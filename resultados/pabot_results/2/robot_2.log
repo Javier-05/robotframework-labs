@@ -1,0 +1,73 @@
+2026-07-06 00:40:48.681450 ==============================================================================
+2026-07-06 00:40:48.723365 Suites
+2026-07-06 00:40:48.723469 ==============================================================================
+2026-07-06 00:40:48.723522 Suites.Ui
+2026-07-06 00:40:48.724315 ==============================================================================
+2026-07-06 00:40:49.023057 Suites.Ui.05 Login Ddt
+2026-07-06 00:40:49.051594 ==============================================================================
+2026-07-06 00:40:51.281445 Usuario estandar                                                      | PASS |
+2026-07-06 00:40:51.284467 ------------------------------------------------------------------------------
+2026-07-06 00:41:07.020668 Usuario bloqueado                                                     | FAIL |
+2026-07-06 00:41:07.038932 Element 'css:h3[data-test='error']' not visible after 15 seconds.
+2026-07-06 00:41:07.038971 ------------------------------------------------------------------------------
+2026-07-06 00:41:22.722530 Clave incorrecta                                                      | FAIL |
+2026-07-06 00:41:22.729273 Element 'css:h3[data-test='error']' not visible after 15 seconds.
+2026-07-06 00:41:22.729345 ------------------------------------------------------------------------------
+2026-07-06 00:41:38.470097 Usuario vacio                                                         | FAIL |
+2026-07-06 00:41:38.507045 Element 'css:h3[data-test='error']' not visible after 15 seconds.
+2026-07-06 00:41:38.507245 ------------------------------------------------------------------------------
+2026-07-06 00:41:40.448493 Agregar Producto Al Carrito                                           | FAIL |
+2026-07-06 00:41:40.448493 [ WARN ] Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+2026-07-06 00:41:40.485427 InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+2026-07-06 00:41:40.485427 Stacktrace:
+2026-07-06 00:41:40.485489 from disconnected: not connected to DevTools
+2026-07-06 00:41:40.485489 	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+2026-07-06 00:41:40.485528   (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+2026-07-06 00:41:40.485528 	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+2026-07-06 00:41:40.485569 Stacktrace:
+2026-07-06 00:41:40.485569 	chromedriver!(No symbol) [0x7ff608907726]
+2026-07-06 00:41:40.485679 	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+2026-07-06 00:41:40.485679 	chromedriver!(No symbol) [0x7ff608953083]
+2026-07-06 00:41:40.485800 	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+2026-07-06 00:41:40.485800 	chromedriver!(No symbol) [0x7ff60898a2d2]
+2026-07-06 00:41:40.485916 	chromedriver!(No symbol) [0x7ff60890793d]
+2026-07-06 00:41:40.485916 	chromedriver!(No symbol) [0x7ff6089840d2]
+2026-07-06 00:41:40.486170 	chromedriver!(No symbol) [0x7ff6088f2d82]
+2026-07-06 00:41:40.486170 	chromedriver!(No symbol) [0x7ff608983892]
+2026-07-06 00:41:40.486326 	chromedriver!(No symbol) [0x7ff6089190cc]
+2026-07-06 00:41:40.486326 	chromedriver!(No symbol) [0x7ff6088d03e5]
+2026-07-06 00:41:40.487117 	chromedriver!(No symbol) [0x7ff608991aa0]
+2026-07-06 00:41:40.487117 	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+2026-07-06 00:41:40.487193 	chromedriver!(No symbol) [0x7ff6089aec82]
+2026-07-06 00:41:40.487193 	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+2026-07-06 00:41:40.487229 	chromedriver!(No symbol) [0x7ff60895401c]
+2026-07-06 00:41:40.487229 	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+2026-07-06 00:41:40.487257 	chromedriver!(No symbol) [0x7ff608954f43]
+2026-07-06 00:41:40.487257 	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+2026-07-06 00:41:40.487285 	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+2026-07-06 00:41:40.487285 	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+2026-07-06 00:41:40.487313 	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+2026-07-06 00:41:40.487313 	chromedriver!(No symbol) [0x7ff6088cf188]
+2026-07-06 00:41:40.487341 	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+2026-07-06 00:41:40.487341 	chromedriver!GetHandleVerifier [0x7ff609577b58+7c84d8]
+2026-07-06 00:41:40.487407 	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+2026-07-06 00:41:40.487407 	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+2026-07-06 00:41:40.487474 	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+2026-07-06 00:41:40.487474 	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+2026-07-06 00:41:40.487506 	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+2026-07-06 00:41:40.487506 
+2026-07-06 00:41:40.487535 	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+2026-07-06 00:41:40.487558 	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+2026-07-06 00:41:40.487575 	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+2026-07-06 00:41:40.487590 	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+2026-07-06 00:41:40.487606 ------------------------------------------------------------------------------
+2026-07-06 00:41:42.602173 Suites.Ui.05 Login Ddt                                                | FAIL |
+2026-07-06 00:41:42.650095 5 tests, 1 passed, 4 failed
+2026-07-06 00:41:42.650142 ==============================================================================
+2026-07-06 00:41:42.650172 Suites.Ui                                                             | FAIL |
+2026-07-06 00:41:42.651449 5 tests, 1 passed, 4 failed
+2026-07-06 00:41:42.651655 ==============================================================================
+2026-07-06 00:41:42.651721 Suites                                                                | FAIL |
+2026-07-06 00:41:42.652983 5 tests, 1 passed, 4 failed
+2026-07-06 00:41:42.653036 ==============================================================================
+2026-07-06 00:41:42.653067 Output:  C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\resultados\pabot_results\2\output.xml

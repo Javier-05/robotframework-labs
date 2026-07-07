@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.4 on win32)" generated="2026-07-06T00:40:46.234572" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="Ui" source="C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\ui">
+<suite id="s1-s1-s1" name="04 Login" source="C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\ui\04_login.robot">
+<test id="s1-s1-s1-t1" name="Login Exitoso Con Usuario Valido" line="9">
+<kw name="Abrir Sitio Swag Labs">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:46.547202" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:40:46.546912" elapsed="2.771803"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.319062" elapsed="0.038873"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:46.546269" elapsed="2.811885"/>
+</kw>
+<kw name="Iniciar Sesion">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:49.359649" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.359034" elapsed="0.351843"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:49.711920" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:40:49.767058" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.711147" elapsed="0.119437"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:49.831518" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.831078" elapsed="0.139605"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-07-06T00:40:49.358564" elapsed="0.612404"/>
+</kw>
+<kw name="Verificar Login Exitoso">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Products</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.971982" elapsed="0.015291"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:49.971324" elapsed="0.016211"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:46.545629" elapsed="3.442245"/>
+</test>
+<test id="s1-s1-s1-t2" name="Login Fallido Con Usuario Bloqueado" line="14">
+<kw name="Abrir Sitio Swag Labs">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:49.991112" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.990450" elapsed="1.597084"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.587899" elapsed="0.038509"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:49.989862" elapsed="1.636742"/>
+</kw>
+<kw name="Iniciar Sesion">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.628540" level="INFO">Typing text 'locked_out_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.627854" elapsed="0.173112"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.801902" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:40:51.849911" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.801353" elapsed="0.117660"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.919924" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.919441" elapsed="0.080888"/>
+</kw>
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-07-06T00:40:51.626939" elapsed="0.373717"/>
+</kw>
+<kw name="Verificar Mensaje De Error">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:40:52.002043" elapsed="0.019574"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:52.001140" elapsed="0.021011"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:49.988767" elapsed="2.033981"/>
+</test>
+<status status="PASS" start="2026-07-06T00:40:46.279163" elapsed="5.745177"/>
+</suite>
+<status status="PASS" start="2026-07-06T00:40:46.277908" elapsed="5.749078"/>
+</suite>
+<status status="PASS" start="2026-07-06T00:40:46.245543" elapsed="5.783112"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Suites" id="s1" pass="2" fail="0" skip="0">Suites</stat>
+<stat name="Ui" id="s1-s1" pass="2" fail="0" skip="0">Suites.Ui</stat>
+<stat name="04 Login" id="s1-s1-s1" pass="2" fail="0" skip="0">Suites.Ui.04 Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

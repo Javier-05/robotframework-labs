@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.4 on win32)" generated="2026-07-06T00:40:48.688814" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="Ui" source="C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\ui">
+<suite id="s1-s1-s1" name="05 Login Ddt" source="C:\Users\ADMIN\Downloads\robotframework-labs\lab7partelll\ui\05_login_ddt.robot">
+<kw name="Abrir Navegador" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-07-06T00:40:49.054104" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E86020F4D0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.052157" elapsed="0.001996"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>detach</arg>
+<arg>${True}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.054356" elapsed="0.000388"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:49.055083" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>https://www.saucedemo.com</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:40:49.054884" elapsed="1.559183"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.615303" elapsed="0.045060"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:49.051611" elapsed="1.609003"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Usuario estandar" line="10">
+<kw name="Validar Intento De Login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:50.662317" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>https://www.saucedemo.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.662125" elapsed="0.081028"/>
+</kw>
+<kw name="Ingresar Credenciales" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.744061" elapsed="0.031590"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.775838" elapsed="0.063990"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.840093" elapsed="0.044731"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:50.885380" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${INPUT_USER}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:50.885048" elapsed="0.130577"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.016545" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:40:51.051427" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.015967" elapsed="0.105374"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.121990" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.121634" elapsed="0.146966"/>
+</kw>
+<arg>${usuario}</arg>
+<arg>${clave}</arg>
+<status status="PASS" start="2026-07-06T00:40:50.743524" elapsed="0.525262"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Products</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.269786" elapsed="0.013810"/>
+</kw>
+<arg>'${resultado}' == 'exito'</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>Products</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.269016" elapsed="0.014735"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<arg>exito</arg>
+<status status="PASS" start="2026-07-06T00:40:50.661621" elapsed="0.622291"/>
+</kw>
+<status status="PASS" start="2026-07-06T00:40:50.660793" elapsed="0.623289"/>
+</test>
+<test id="s1-s1-s1-t2" name="Usuario bloqueado" line="11">
+<kw name="Validar Intento De Login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.285084" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>https://www.saucedemo.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.284988" elapsed="0.031961"/>
+</kw>
+<kw name="Ingresar Credenciales" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.317854" elapsed="0.045382"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.363569" elapsed="0.045620"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.409465" elapsed="0.041080"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.452211" level="INFO">Typing text 'locked_out_user' into text field 'id:user-name'.</msg>
+<arg>${INPUT_USER}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.451009" elapsed="0.104627"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.556789" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:40:51.605868" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.556040" elapsed="0.147284"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:40:51.704491" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:40:51.703887" elapsed="0.167161"/>
+</kw>
+<arg>${usuario}</arg>
+<arg>${clave}</arg>
+<status status="PASS" start="2026-07-06T00:40:51.317329" elapsed="0.553893"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:07.035789" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-07-06T00:41:07.036031" level="FAIL">Element 'css:h3[data-test='error']' not visible after 15 seconds.</msg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-07-06T00:40:51.872406" elapsed="15.165553">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>'${resultado}' == 'exito'</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>Products</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-07-06T00:40:51.871494" elapsed="15.166573">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<arg>error</arg>
+<status status="FAIL" start="2026-07-06T00:40:51.284728" elapsed="15.753495">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-07-06T00:40:51.284379" elapsed="15.754123">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</test>
+<test id="s1-s1-s1-t3" name="Clave incorrecta" line="12">
+<kw name="Validar Intento De Login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:07.039478" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>https://www.saucedemo.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.039373" elapsed="0.056834"/>
+</kw>
+<kw name="Ingresar Credenciales" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.096830" elapsed="0.014825"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.112198" elapsed="0.024389"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.136750" elapsed="0.026703"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:07.164296" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${INPUT_USER}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.163752" elapsed="0.108488"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:07.273018" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:41:07.337436" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.272544" elapsed="0.170558"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:07.444219" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:07.443511" elapsed="0.138272"/>
+</kw>
+<arg>${usuario}</arg>
+<arg>${clave}</arg>
+<status status="PASS" start="2026-07-06T00:41:07.096462" elapsed="0.485697"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:22.724146" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-07-06T00:41:22.724508" level="FAIL">Element 'css:h3[data-test='error']' not visible after 15 seconds.</msg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-07-06T00:41:07.584279" elapsed="15.143314">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>'${resultado}' == 'exito'</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>Products</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-07-06T00:41:07.582507" elapsed="15.145328">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>standard_user</arg>
+<arg>clave_invalida</arg>
+<arg>error</arg>
+<status status="FAIL" start="2026-07-06T00:41:07.039116" elapsed="15.689163">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-07-06T00:41:07.038760" elapsed="15.689955">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</test>
+<test id="s1-s1-s1-t4" name="Usuario vacio" line="13">
+<kw name="Validar Intento De Login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:22.732415" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>https://www.saucedemo.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:41:22.732240" elapsed="0.106252"/>
+</kw>
+<kw name="Ingresar Credenciales" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:41:22.840909" elapsed="0.033767"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:22.875433" elapsed="0.076472"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:22.952319" elapsed="0.058799"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:23.012333" level="INFO">Typing text '' into text field 'id:user-name'.</msg>
+<arg>${INPUT_USER}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:23.011556" elapsed="0.120328"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:23.133058" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:41:23.190515" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:23.132317" elapsed="0.136065"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:23.269228" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:23.268732" elapsed="0.121454"/>
+</kw>
+<arg>${usuario}</arg>
+<arg>${clave}</arg>
+<status status="PASS" start="2026-07-06T00:41:22.839367" elapsed="0.551070"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:38.501941" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-07-06T00:41:38.502421" level="FAIL">Element 'css:h3[data-test='error']' not visible after 15 seconds.</msg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-07-06T00:41:23.392439" elapsed="15.112830">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>'${resultado}' == 'exito'</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>Products</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:h3[data-test='error']</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-07-06T00:41:23.391087" elapsed="15.114482">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>secret_sauce</arg>
+<arg>error</arg>
+<status status="FAIL" start="2026-07-06T00:41:22.730713" elapsed="15.775222">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-07-06T00:41:22.729550" elapsed="15.777009">Element 'css:h3[data-test='error']' not visible after 15 seconds.</status>
+</test>
+<test id="s1-s1-s1-t5" name="Agregar Producto Al Carrito" line="15">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:38.508715" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>https://www.saucedemo.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.508420" elapsed="0.087859"/>
+</kw>
+<kw name="Login Exitoso" owner="login_page">
+<kw name="Ingresar Credenciales" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.598579" elapsed="0.032799"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_USER}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.631816" elapsed="0.067277"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.699572" elapsed="0.057325"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:38.758134" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${INPUT_USER}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.757192" elapsed="0.148200"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:38.906908" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-07-06T00:41:38.965288" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${clave}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:38.905861" elapsed="0.148247"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:39.055358" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-06T00:41:39.054548" elapsed="0.136535"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-07-06T00:41:38.597646" elapsed="0.593735"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-07-06T00:41:40.475070" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff608907726]
+	chromedriver!(No symbol) [0x7ff608953083]
+	chromedriver!(No symbol) [0x7ff60898a2d2]
+	chromedriver!(No symbol) [0x7ff6089840d2]
+	chromedriver!(No symbol) [0x7ff608983892]
+	chromedriver!(No symbol) [0x7ff6088d03e5]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!(No symbol) [0x7ff6088cf188]
+	chromedriver!GetHandleVerifier [0x7ff609577b58+7c84d8]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</msg>
+<msg time="2026-07-06T00:41:40.475576" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff60890793d]
+	chromedriver!(No symbol) [0x7ff6088f2d82]
+	chromedriver!(No symbol) [0x7ff6089190cc]
+	chromedriver!(No symbol) [0x7ff608991aa0]
+	chromedriver!(No symbol) [0x7ff6089aec82]
+	chromedriver!(No symbol) [0x7ff60895401c]
+	chromedriver!(No symbol) [0x7ff608954f43]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</msg>
+<arg>Products</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-07-06T00:41:39.191750" elapsed="1.291862">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff60890793d]
+	chromedriver!(No symbol) [0x7ff6088f2d82]
+	chromedriver!(No symbol) [0x7ff6089190cc]
+	chromedriver!(No symbol) [0x7ff608991aa0]
+	chromedriver!(No symbol) [0x7ff6089aec82]
+	chromedriver!(No symbol) [0x7ff60895401c]
+	chromedriver!(No symbol) [0x7ff608954f43]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</status>
+</kw>
+<status status="FAIL" start="2026-07-06T00:41:38.596755" elapsed="1.887158">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff60890793d]
+	chromedriver!(No symbol) [0x7ff6088f2d82]
+	chromedriver!(No symbol) [0x7ff6089190cc]
+	chromedriver!(No symbol) [0x7ff608991aa0]
+	chromedriver!(No symbol) [0x7ff6089aec82]
+	chromedriver!(No symbol) [0x7ff60895401c]
+	chromedriver!(No symbol) [0x7ff608954f43]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</status>
+</kw>
+<kw name="Agregar Backpack Al Carrito" owner="login_page">
+<status status="NOT RUN" start="2026-07-06T00:41:40.484281" elapsed="0.000053"/>
+</kw>
+<kw name="Verificar Carrito Con Un Producto" owner="login_page">
+<status status="NOT RUN" start="2026-07-06T00:41:40.484457" elapsed="0.000033"/>
+</kw>
+<kw name="Pause Execution" owner="Dialogs">
+<arg>Toma la captura del carrito con 1 producto y luego presiona OK.</arg>
+<doc>Pauses execution until user clicks ``Ok`` button.</doc>
+<status status="NOT RUN" start="2026-07-06T00:41:40.484621" elapsed="0.000044"/>
+</kw>
+<status status="FAIL" start="2026-07-06T00:41:38.507510" elapsed="1.977477">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.201); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff60890793d]
+	chromedriver!(No symbol) [0x7ff6088f2d82]
+	chromedriver!(No symbol) [0x7ff6089190cc]
+	chromedriver!(No symbol) [0x7ff608991aa0]
+	chromedriver!(No symbol) [0x7ff6089aec82]
+	chromedriver!(No symbol) [0x7ff60895401c]
+	chromedriver!(No symbol) [0x7ff608954f43]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff608dcd744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff608dcd8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff608db1447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-07-06T00:41:40.485913" elapsed="2.162521"/>
+</kw>
+<status status="FAIL" start="2026-07-06T00:40:48.724065" elapsed="53.924606"/>
+</suite>
+<status status="FAIL" start="2026-07-06T00:40:48.722984" elapsed="53.927635"/>
+</suite>
+<status status="FAIL" start="2026-07-06T00:40:48.690381" elapsed="53.961660"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Suites" id="s1" pass="1" fail="4" skip="0">Suites</stat>
+<stat name="Ui" id="s1-s1" pass="1" fail="4" skip="0">Suites.Ui</stat>
+<stat name="05 Login Ddt" id="s1-s1-s1" pass="1" fail="4" skip="0">Suites.Ui.05 Login Ddt</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-07-06T00:41:40.475070" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff608dc3fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff608dc4000+14980]
+	chromedriver!(No symbol) [0x7ff608907726]
+	chromedriver!(No symbol) [0x7ff608953083]
+	chromedriver!(No symbol) [0x7ff60898a2d2]
+	chromedriver!(No symbol) [0x7ff6089840d2]
+	chromedriver!(No symbol) [0x7ff608983892]
+	chromedriver!(No symbol) [0x7ff6088d03e5]
+	chromedriver!GetHandleVerifier [0x7ff6093a7591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff6093a1902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff6093c7115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff608de1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff608dea82c+3b1ac]
+	chromedriver!(No symbol) [0x7ff6088cf188]
+	chromedriver!GetHandleVerifier [0x7ff609577b58+7c84d8]
+	KERNEL32!BaseThreadInitThunk [0x7ffa223de957+17]
+	ntdll!RtlUserThreadStart [0x7ffa22fa7c1c+2c]
+</msg>
+</errors>
+</robot>
