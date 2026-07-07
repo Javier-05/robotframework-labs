@@ -27,7 +27,10 @@ Agregar Backpack Al Carrito
     Wait Until Element Is Visible    ${BTN_BACKPACK}    timeout=10s
     Scroll Element Into View         ${BTN_BACKPACK}
     Wait Until Keyword Succeeds      10s    1s    Click Element    ${BTN_BACKPACK}
+    ${clicked}=    Run Keyword And Return Status    Element Text Should Be    ${BTN_BACKPACK}    Remove
+    Run Keyword If    not ${clicked}    Execute JavaScript    document.querySelector('#add-to-cart-sauce-labs-backpack').click()
 
 Verificar Carrito Con Un Producto
+    Wait Until Keyword Succeeds    10s    1s    Element Should Contain    id:remove-sauce-labs-backpack    Remove
     Wait Until Keyword Succeeds    10s    1s    Element Should Be Visible    ${BADGE_CARRITO}
     Element Text Should Be         ${BADGE_CARRITO}    1
