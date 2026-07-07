@@ -24,6 +24,9 @@ jobs:
  
       - name: Ejecutar pruebas de API
         run: robot --outputdir resultados api
+
+      - name: Ejecutar suite de regresion completa
+        run: robot --outputdir resultados 07_regresion_completa.robot
  
       - name: Publicar resultados como artefacto
         if: always()
