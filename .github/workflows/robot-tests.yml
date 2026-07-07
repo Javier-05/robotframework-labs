@@ -1,6 +1,4 @@
 name: Robot Framework CI
-# workflow actualizado
-name: Robot Framework CI
  
 on:
   push:
