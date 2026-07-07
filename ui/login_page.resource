@@ -25,8 +25,9 @@ Login Exitoso
 
 Agregar Backpack Al Carrito
     Wait Until Element Is Visible    ${BTN_BACKPACK}    timeout=10s
-    Click Button    ${BTN_BACKPACK}
+    Scroll Element Into View         ${BTN_BACKPACK}
+    Wait Until Keyword Succeeds      10s    1s    Click Element    ${BTN_BACKPACK}
 
 Verificar Carrito Con Un Producto
-    Wait Until Element Is Visible    ${BADGE_CARRITO}    timeout=10s
-    Element Text Should Be    ${BADGE_CARRITO}    1
+    Wait Until Keyword Succeeds    10s    1s    Element Should Be Visible    ${BADGE_CARRITO}
+    Element Text Should Be         ${BADGE_CARRITO}    1
